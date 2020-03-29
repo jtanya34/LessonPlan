@@ -1,26 +1,43 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Lesson from "../src/components/Lesson";
+import { connect } from "react-redux";
+import { getAllData } from "./redux/action";
+import "./App.css";
+class App extends React.Component {
+  state = {
+    lessonDetails: "",
+    instrumentTitle: "",
+    recitalTitle: "",
+  };
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  render() {
+    return (
+      <div className="App">
+        <div className="frame">
+a          <div className="header">
+            <p className="App-header">Lavender's Blue</p>
+            <span className="instrument">{this.props.instrumentTitle}</span>
+          </div>
+          <div className="lesson">
+            <Lesson />
+            <p className="App-header">{this.state.instrumentTitle}</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
 
-export default App;
+function mapStateToProps(state) {
+  return {
+    lessonDetails: state.lessonDetails,
+    instrumentTitle: state.instrumentTitle,
+    recitalTitle: state.recitalTitle,
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return getAllData(dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

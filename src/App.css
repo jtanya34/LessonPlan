@@ -14,14 +14,14 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 26px;
+  line-height: 30px;
+  text-align: center;
+
+  color: #bc1b1b;
 }
 
 .App-link {
@@ -34,5 +34,197 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+.frame {
+  position: absolute;
+  width: 100%;
+  height: 1400px;
+
+  background: #c4c4c473;
+}
+.header {
+  display: flex;
+  justify-content: space-around;
+}
+.lessons {
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.exitTab {
+  left: 25px;
+  width: 88px;
+  height: 25px;
+
+  background: #bc1b1b;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  color: white;
+  font-size: 14px;
+  padding-top: 6px;
+}
+.sideTab {
+  position: relative;
+  width: 15%;
+  height: 1290px;
+  background: #fed330;
+  border: 1px solid #fed330;
+  box-sizing: border-box;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
+  border-radius: 5px;
+}
+
+.videolink {
+  display: grid;
+  margin: 10% 10% 10% 28%;
+  background: none !important;
+  border: none;
+  padding: 0 !important;
+  font-family: arial, sans-serif;
+  color: black;
+  text-decoration: underline;
+  cursor: pointer;
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+}
+.videolink:focus {
+  outline: none;
+  color: rgb(0, 151, 230);
+}
+.objective {
+  display: grid;
+  width: 80%;
+  height: 14%;
+  margin: 9%;
+  background: #ffffff;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
+  border-radius: 5px;
+}
+.activity {
+  justify-content: end;
+  cursor: pointer;
+}
+.instrument {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 26px;
+  line-height: 30px;
+  text-align: center;
+  padding-top: 2.5%;
+  color: #bc1b1b;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 50px;
+  background-color: grey;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 2px 0;
+  position: absolute;
+  z-index: 1;
+  margin-top: 100%;
+  font-size: 10px;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: bold;
+  padding: 8px;
+}
+.modals {
+  display: grid;
+  margin: 50px;
+}
+
+.modals button {
+  background-color: rgb(0, 151, 230);
+  border: none;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 5px;
+  cursor: pointer;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+.modals button:hover {
+  text-transform: uppercase;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 1), 0 1px 2px rgba(0, 0, 0, 0.1);
+  font-size: 12px;
+  background-color: rgb(0, 168, 255);
+}
+
+.loading {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+.obj {
+  width: 6px;
+  height: 40px;
+  background: #fed330;
+  margin: 0 3px;
+  border-radius: 10px;
+  animation: loading 0.8s infinite;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
+}
+.obj:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.obj:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.obj:nth-child(4) {
+  animation-delay: 0.3s;
+}
+.obj:nth-child(5) {
+  animation-delay: 0.4s;
+}
+.obj:nth-child(6) {
+  animation-delay: 0.5s;
+}
+.obj:nth-child(7) {
+  animation-delay: 0.6s;
+}
+.obj:nth-child(8) {
+  animation-delay: 0.7s;
+}
+
+@keyframes loading {
+  0% {
+    height: 0;
+  }
+  50% {
+    height: 40px;
+  }
+  100% {
+    height: 0;
   }
 }
